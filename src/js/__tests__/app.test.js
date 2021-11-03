@@ -3,7 +3,7 @@ import sortValue from '../app';
 const date1 = {
   name: 'мечник', health: 10, level: 2, attack: 80, defence: 40,
 };
-const date2 = [ 'name', 'level' ];
+const date2 = ['name', 'level'];
 const expected = [
   { key: 'name', value: 'мечник' },
   { key: 'level', value: 2 },
