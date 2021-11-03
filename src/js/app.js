@@ -1,8 +1,8 @@
 export default function sortValue(ob, order) {
-  let temporari = Object.entries(ob);
+  const temporari = Object.entries(ob);
   let result = [];
     for(let i of order) {
-      let j = temporari.find(item => item[0] == i);
+      let j = temporari.find((item) => item[0] == i);
       temporari.splice(temporari.indexOf(j), 1);
       result.push(j);
     };
