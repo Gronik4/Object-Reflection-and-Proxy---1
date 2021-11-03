@@ -9,7 +9,7 @@ export default function sortValue(ob, order) {
   result = result.concat(temporari.sort());
   const summDat = [];
   result.forEach((item) => {
-    const i = { 'key': item[0], 'value': item[1] };
+    const i = { key: item[0], value: item[1] };
     summDat.push(i);
   });
   return summDat;
