@@ -1,16 +1,16 @@
 export default function sortValue(ob, order) {
-  const temporari = Object.entries(ob);
-  let result = [];
-  for (const i of order) {
-    const j = temporari.find((item) => item[0] === i);
-    temporari.splice(temporari.indexOf(j), 1);
-    result.push(j);
+  let res = [];
+  for (const item of order) {
+    res.push({ key: item, value: ob[item] });
+    delete ob[item];
   }
-  result = result.concat(temporari.sort());
-  const summDat = [];
-  result.forEach((item) => {
-    const i = { key: item[0], value: item[1] };
-    summDat.push(i);
+  const res1 = [];
+  for (const item in ob) {
+    res1.push({ key: item, value: ob[item] });
+  }
+  res1.sort((a, b) => {
+    if (a.key > b.key) { return 1; } else { return -1; }
   });
-  return summDat;
+  res = res.concat(res1);
+  return res;
 }
