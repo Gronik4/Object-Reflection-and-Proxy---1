@@ -9,7 +9,8 @@ export default function sortValue(ob, order) {
     res1.push({ key: item, value: ob[item] });
   }
   res1.sort((a, b) => {
-    if (a.key > b.key) { return 1; } else { return -1; }
+    const j = (a.key > b.key) ? 1 : -1;
+    return j;
   });
   res = res.concat(res1);
   return res;
